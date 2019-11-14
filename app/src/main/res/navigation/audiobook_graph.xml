@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/audiobook_graph"
+    app:startDestination="@id/audiobook"
+    tools:ignore="UnusedNavigation">
+
+    <include app:graph="@navigation/detail" />
+
+    <fragment
+        android:id="@+id/audiobook"
+        android:label="@string/audio_book"
+        android:name="com.example.testapp.audiobook.AudioBookFragment">
+        <action android:id="@+id/navigate_to_detail"
+            app:destination="@id/detail">
+            <argument
+                android:name="id"
+                app:argType="string" />
+        </action>
+    </fragment>
+</navigation>
